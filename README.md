@@ -53,28 +53,39 @@ A. Check your code. If there is no apparent error, try adding an extra delay so 
 
 
 ```
-#include <Enes100.h>  
-void setup() {  
- Enes100.begin ("It's lit", FIRE, 3, 8, 9);  
- // Valid mission names include: CRASH_SITE, DATA, MATERIAL, FIRE, and WATER  
- // These are case sensitive.  
- // The numbers are the pins used for RX, TX, and power.  
- Serial.begin(9600);  
-}  
-  
-void loop() {  
- if(!Enes100.updateLocation()){Enes100.printIn("Error");  
-  
-}  
-else{  
- float x = Enes100.location.x;  
- float y = Enes100.location.y;  
- float theta = Enes100.location.theta;  
- // This is where you might want to add a delay so that you can read what is printed and so the system has enough time to register the angle.  
- Enes100.print(x);  
- Enes100.print(",");  
- Enes100.printIn(theta);  
-}  
+#include <Enes100.h>
+
+//global
+float x, y, theta = 0.0;
+
+void setup() {
+   Enes100.begin ("It's lit", FIRE, 3, 8, 9);
+   // Valid mission names include: CRASH_SITE, DATA, MATERIAL, FIRE, and WATER
+   // These are case sensitive.
+   // The numbers are the pins used for RX, TX, and power.
+   Serial.begin(9600);
+}
+
+void loop() {
+  if(!Enes100.updateLocation()){Enes100.printIn("Error");
+
+}
+else{
+  x = Enes100.location.x;
+  y = Enes100.location.y;
+  theta = Enes100.location.theta;
+  // This is where you might want to add a delay so that you can read what is printed and so the system has enough time to register the angle.
+  Enes100.print(x);// These print to the vision system
+  Enes100.print(",");
+  Enes100.print(y);
+  Enes100.print(",");
+  Enes100.println(theta);
+  Serial.print(x);// These print to the serial monitor from the Arduino program on your computer
+  Serial.print(",");
+  Serial.print(y);
+  Serial.print(",");
+  Serial.println(theta);
+
 }
 ```
 
