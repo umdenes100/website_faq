@@ -44,7 +44,7 @@ A. There could be many reasons why. First check to see if there is a red light o
 Turn the multimeter to 20V (this is because the wifi module requires 5V and the voltage of the multimeter should be higher than that) and then put one probe on the ground source (the wire or port which the wifi module is connected to) for the wifi module and the other on the power source. Make sure the battery is connected, the kill switch is on, and the Arduino is not connected to a computer or power source other than the battery. The reading on the multimeter should be ~5V. If it is not, the wifi module is not receiving the correct amount of power. This means an error in the circuit.
 
 
-*If there isn’t a blue light*, that means that the WiFi module is not communicating with the vision system. First, do not use pins 0 or 1 (despite them being labeled TX and RX); on most microcontrollers, any digital pin except 0 and 1 should work. If you are using an Arduino Mega, check to see that TX is in 50, 51, 52, or 53. If TX is not in one of those, switch that and change the code accordingly. If all these conditions are met and the blue light is still not blinking, the problem is likely in your code.
+*If there isn’t a blue light*, that means that the WiFi module is not communicating with the vision system. First, do not use pins 0 or 1 (despite them being labeled TX and RX); on most microcontrollers, any digital pin except 0 and 1 should work. If you are using an Arduino Mega, check to see that TX is in 50, 51, 52, or 53. If TX is not in one of those, switch that and change the code accordingly. If all these conditions are met and the blue light is still not blinking, the problem is likely in your code. Is the program only running once in the setup() function? Make sure that there is something in the setup that is not in loop and that there is something in both. You could also try running just the example code from the ENES100 library (found on the website) to check and see if the wifi module is working.
 
 
 #### Q. Why is my OTV just driving in a circle in the arena? 
@@ -154,18 +154,9 @@ The mouse is over the correct selection for style
 
 Make sure to delete any text boxes and text before exporting as a pdf as well.
 
-If the cut stops partway through, check that the piece of acrylic or birch is not right up to the edges of the laser bed. If it is, move it away from the edges slightly and start over.
+If the cut stops partway through, check that the piece of acrylic or birch is not right up to the edges of the laser bed. If it is, move it away from the edges by about 2 inches and start over.
 
 
 #### Q. Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied?
 
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
-
-  
-#### Q. Why isn’t my text showing up on the Vision System debug console?
-
-A. Check the code. Is the program only running once in the setup() function? Make sure that there is something in the setup that is not in loop and that there is something in both. Also check that you are not printing to serial but to the vision system. Finally,try looking over your code and see if it makes sense and is doing what you think it should.
-
-Other non-code related issues you could check for: Are the Tx and Rx pins connected properly (view wifi module FAQ)? Is the module getting enough power (again, view wifi module FAQ)? Is the program only running once in the setup() function? 
-
-If the answer was no to any of the above questions, change that and then try again.
