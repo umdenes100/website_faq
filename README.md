@@ -147,7 +147,7 @@ Alternatively, for larger connections, after melting some solder onto the iron t
 A. For if it’s the wrong size, make sure the dimensions are 1:1 when exporting from Fusion360. You should also make sure that the style in Fusion360 is “line” (view screenshot)
 
   <p align="center">
-  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Laser_Cutter_Settings.png" alt="Laser Cutter Settings" width="250">
+  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Laser_Cutter.png" alt="Laser Cutter Settings" width="250">
   <p>
 
 The mouse is over the correct selection for style 
