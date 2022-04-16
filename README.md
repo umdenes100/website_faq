@@ -104,7 +104,7 @@ A. Consider lowering the threshold (or distance) at which the sensor is activate
 *Step 0:* Check the condition of the tip of the iron. If it is very black, replace the tip (an example of a bad tip is pictured below). This is done by unscrewing the black grip of the soldering iron and removing the tip. Select a new one and insert it back into the iron. Screw the grip back into place over it. Do NOT do this with the iron plugged in or if the iron is hot!
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Solder_Tips.png" alt="Solder Tips + Order" width="250">
+  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Solder_Tips.png" alt="Solder Tips + Order" width="450">
 	<p>
 	
 *Step 1:* Turn the soldering iron on to 600 and wait until you see that the small number (green arrow) matches the larger one (red arrow)
@@ -117,7 +117,7 @@ A. Consider lowering the threshold (or distance) at which the sensor is activate
 *Step 2*: Make sure that the sponge under the iron is wet and that the fan for your iron is on
 
   <p align="center">
-  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Sponge_Water_Vent_Fan.png" alt="Sponge, Water, & Vent Fan" width="250">
+  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Sponge_Water_Vent_Fan.png" alt="Sponge, Water, & Vent Fan" width="450">
   <p>
 
   
@@ -125,7 +125,7 @@ A. Consider lowering the threshold (or distance) at which the sensor is activate
 *Step 3*: Make sure your wire is set up correctly. Both wires you are soldering should have the ends stripped about 0.5 inches. These should then be twisted together and mounted in the clips (helping hands) as shown below:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Helping_Hands.png" alt="Helping Hands" width="250">
+  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Helping_Hands.png" alt="Helping Hands" width="450">
   <p>
 	  
 *Note: Both wires should be partially connected thanks to the twisting and securely held by the clips so that they do not separate while you are soldering.*
@@ -134,7 +134,7 @@ A. Consider lowering the threshold (or distance) at which the sensor is activate
   *Step 4*: Plunge the soldering iron tip into the tip tinner (pictured below). The tip tinner should bead up along the tip. After this, shove the entire tip into the steel wool (pictured below) and rotate it around. To remove any beads of solder but keep a thin layer behind. Then, use a brush to paint the flux onto your wires.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Soldering_Accessories.png" alt="Soldering Accessories" width="250">
+  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Soldering_Accessories.png" alt="Soldering Accessories" width="450">
   <p>
  
   
