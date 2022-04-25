@@ -171,3 +171,7 @@ If the cut stops partway through, check that the piece of acrylic or birch is no
 #### Q. Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied?
 
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
+	  
+#### Q. When I attach my servos, my other motors are not working. Why?
+	  
+A. The "servo.h" library disables PWM on pins 9 and 10 when you use servo.attach();
