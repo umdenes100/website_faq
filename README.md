@@ -171,3 +171,8 @@ If the cut stops partway through, check that the piece of acrylic or birch is no
 #### Q. Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied?
 
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
+	  
+
+#### Q. Why is my OTV not turning to the direction I want it to?
+
+A. Try to verify the arena coordinates your OTV is in and that you're asking it to turn to the correct angle. In addtion, add +- thresholds to target angle. For example, if you have a target angle of 90°, set a range between 85° and 95°. 
