@@ -175,4 +175,9 @@ A. Check for common ground! The H-Bridge and Arduino should be commonly grounded
 
 #### Q. Why is my OTV not turning to the direction I want it to?
 
-A. Try to verify the arena coordinates your OTV is in and that you're asking it to turn to the correct angle. In addtion, add +- thresholds to target angle. For example, if you have a target angle of 90°, set a range between 85° and 95°. 
+A. Try to verify the arena coordinates your OTV is in and that you're asking it to turn to the correct angle. In addtion, add +- thresholds to target angle. For example, if you have a target angle of 90°, set a range between 85° and 95°. In addition, make sure that you are sampling the coordinates frequently enough. Try to sample the coordinates every 20 milliseconds in order to get a consistent update on your OTV location.
+
+
+#### Q. Why is my simulator code not working on my OTV?
+
+A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. YOu will have to make your own motor controller code for your OTV to work.
