@@ -1,4 +1,7 @@
 # ENES100 FAQ
+
+
+# GUS
 #### Q. How do I get my servo motor to stop jittering?
 
 A. Try detaching the servo using the “.detach” method. You should only have the servo “attached” when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
