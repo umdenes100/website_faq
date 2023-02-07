@@ -1,7 +1,6 @@
 # ENES100 FAQ
 
 
-# GUS
 #### Q. How do I get my servo motor to stop jittering?
 
 A. Try detaching the servo using the “.detach” method. You should only have the servo “attached” when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
@@ -39,6 +38,13 @@ Repeat the process on different power and ground wires until you locate the exac
 
 
 #### Q. Why isn't my WiFi module working?
+
+Use these pins for Arduino Megas
+
+- 50
+- 51
+- 52
+- 53
 
 A. There could be many reasons why. First check to see if there is a red light on the wifi module. If there is, that means it is getting power (not necessarily the correct amount). If the red light is very dim, check to make sure that you’re giving the WiFi module 5V power (not 3.3V). If it’s still dim, your Arduino may be supplying too much current to other devices on your OTV so they should be powered from your battery instead.
 
@@ -184,3 +190,5 @@ A. Try to verify the arena coordinates your OTV is in and that you're asking it 
 #### Q. Why is my simulator code not working on my OTV?
 
 A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. YOu will have to make your own motor controller code for your OTV to work.
+
+#### Q. 
