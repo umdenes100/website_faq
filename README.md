@@ -3,8 +3,8 @@
 # Table of contents
 1. [Programming](#introduction)
 2. [Electronics](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
+  <>  1. [Sub paragraph](#subparagraph1)
+<> 3. [Another paragraph](#paragraph2)
 
 ## Programming <a name="introduction"></a>
 #### Q. Why is my simulator code not working on my OTV?
@@ -200,11 +200,11 @@ If the cut stops partway through, check that the piece of acrylic or birch is no
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
 	  
 
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+<>### Sub paragraph <a name="subparagraph1"></a>
+<>This is a sub paragraph, formatted in heading 3 style
 
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
+<>## Another paragraph <a name="paragraph2"></a>
+<>The second paragraph text
  
 
 
