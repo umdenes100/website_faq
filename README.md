@@ -1,23 +1,24 @@
 # ENES100 FAQ
 
 # Table of contents
-1. [Introduction](#introduction)
-2. [Some paragraph](#paragraph1)
+1. [Programming](#introduction)
+2. [Electronics](#paragraph1)
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
+## Programming <a name="introduction"></a>
+#### Q. Why is my simulator code not working on my OTV?
 
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
+A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. You will have to make your own motor controller code for your OTV to work.
 
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+#### Q. Why are my pointers not working in the simulator?
 
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
- 
+A. The simulator does not support pointers.
+
+#### Q. Why is my OTV not turning to the direction I want it to?
+
+A. Try to verify the arena coordinates your OTV is in and that you're asking it to turn to the correct angle. In addtion, add +- thresholds to target angle. For example, if you have a target angle of 90°, set a range between 85° and 95°. In addition, make sure that you are sampling the coordinates frequently enough. Try to sample the coordinates every 20 milliseconds in order to get a consistent update on your OTV location.
+
 #### Q. How do I get my servo motor to stop jittering?
 
 A. Try detaching the servo using the “.detach” method. You should only have the servo “attached” when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
@@ -40,41 +41,6 @@ void loop() {
 }
 
 ```
-
-
-#### Q. How do I check for shorts in my circuit?
-
-A. Grab a multimeter, from one of the cabinets in the lab, and turn the dial to “continuity”. The symbol for “continuity” is highlighted by the red arrow below.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/multimeter.png" alt="Multimeter" width="250">
-
-  <p>Place one probe on a power component of the circuit and one on a ground component of the circuit. Both probes must touch the metal part of the component. If the multimeter beeps, the power and ground must be touching somewhere. 
-
-Repeat the process on different power and ground wires until you locate the exact location of the short.
-
-
-#### Q. Why isn't my WiFi module working?
-
-Use these pins for __Arduino Megas__
-
-- 50
-- 51
-- 52
-- 53
-
-A. __Do not use pins 0 and 1 on your Arduino.__
-	  
-There could be many reasons why. First check to see if there is a red light on the wifi module. If there is, that means it is getting power (not necessarily the correct amount). If the red light is very dim, check to make sure that you’re giving the WiFi module 5V power (not 3.3V). If it’s still dim, your Arduino may be supplying too much current to other devices on your OTV so they should be powered from your battery instead.
-
-*If there isn’t a red light*, check your circuit to see if any wires are disconnected or placed incorrectly. If that is corrected and there is still no red light, then use a multimeter to check to see if the wifi module is actually receiving the correct voltage of 5V.
-
-Turn the multimeter to 20V (this is because the wifi module requires 5V and the voltage of the multimeter should be higher than that) and then put one probe on the ground source (the wire or port which the wifi module is connected to) for the wifi module and the other on the power source. Make sure the battery is connected, the kill switch is on, and the Arduino is not connected to a computer or power source other than the battery. The reading on the multimeter should be ~5V. If it is not, the wifi module is not receiving the correct amount of power. This means an error in the circuit.
-
-
-*If there isn’t a blue light*, that means that the WiFi module is not communicating with the vision system. First, do not use pins 0 or 1 (despite them being labeled TX and RX); on most microcontrollers, any digital pin except 0 and 1 should work. If you are using an Arduino Mega, check to see that TX is in 50, 51, 52, or 53. If TX is not in one of those, switch that and change the code accordingly. If all these conditions are met and the blue light is still not blinking, the problem is likely in your code. Is the program only running once in the setup() function? Make sure that there is something in the setup that is not in loop and that there is something in both. You could also try running just the example code from the ENES100 library (found on the website) to check and see if the wifi module is working.
-
-
 #### Q. Why is my OTV just driving in a circle in the arena? 
 
 A. Check your code. If there is no apparent error, try adding an extra delay so that the system has enough time to fully process. For the location of the delay, view sample below:
@@ -126,6 +92,39 @@ A. Isolate the code that you intend to use for the motor/sensor and place it in 
 
 A. Consider lowering the threshold (or distance) at which the sensor is activated. This increases the relative sensitivity of the sensor.
 
+#### Q. Why isn't my WiFi module working?
+
+Use these pins for __Arduino Megas__
+
+- 50
+- 51
+- 52
+- 53
+
+A. __Do not use pins 0 and 1 on your Arduino.__
+	  
+There could be many reasons why. First check to see if there is a red light on the wifi module. If there is, that means it is getting power (not necessarily the correct amount). If the red light is very dim, check to make sure that you’re giving the WiFi module 5V power (not 3.3V). If it’s still dim, your Arduino may be supplying too much current to other devices on your OTV so they should be powered from your battery instead.
+
+*If there isn’t a red light*, check your circuit to see if any wires are disconnected or placed incorrectly. If that is corrected and there is still no red light, then use a multimeter to check to see if the wifi module is actually receiving the correct voltage of 5V.
+
+Turn the multimeter to 20V (this is because the wifi module requires 5V and the voltage of the multimeter should be higher than that) and then put one probe on the ground source (the wire or port which the wifi module is connected to) for the wifi module and the other on the power source. Make sure the battery is connected, the kill switch is on, and the Arduino is not connected to a computer or power source other than the battery. The reading on the multimeter should be ~5V. If it is not, the wifi module is not receiving the correct amount of power. This means an error in the circuit.
+
+
+*If there isn’t a blue light*, that means that the WiFi module is not communicating with the vision system. First, do not use pins 0 or 1 (despite them being labeled TX and RX); on most microcontrollers, any digital pin except 0 and 1 should work. If you are using an Arduino Mega, check to see that TX is in 50, 51, 52, or 53. If TX is not in one of those, switch that and change the code accordingly. If all these conditions are met and the blue light is still not blinking, the problem is likely in your code. Is the program only running once in the setup() function? Make sure that there is something in the setup that is not in loop and that there is something in both. You could also try running just the example code from the ENES100 library (found on the website) to check and see if the wifi module is working.
+
+
+## Electronics <a name="paragraph1"></a>
+
+#### Q. How do I check for shorts in my circuit?
+
+A. Grab a multimeter, from one of the cabinets in the lab, and turn the dial to “continuity”. The symbol for “continuity” is highlighted by the red arrow below.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/multimeter.png" alt="Multimeter" width="250">
+
+  <p>Place one probe on a power component of the circuit and one on a ground component of the circuit. Both probes must touch the metal part of the component. If the multimeter beeps, the power and ground must be touching somewhere. 
+
+Repeat the process on different power and ground wires until you locate the exact location of the short.
 
 #### Q. Why is my soldering iron not working/why can I not solder?
 
@@ -201,13 +200,23 @@ If the cut stops partway through, check that the piece of acrylic or birch is no
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
 	  
 
-#### Q. Why is my OTV not turning to the direction I want it to?
+### Sub paragraph <a name="subparagraph1"></a>
+This is a sub paragraph, formatted in heading 3 style
 
-A. Try to verify the arena coordinates your OTV is in and that you're asking it to turn to the correct angle. In addtion, add +- thresholds to target angle. For example, if you have a target angle of 90°, set a range between 85° and 95°. In addition, make sure that you are sampling the coordinates frequently enough. Try to sample the coordinates every 20 milliseconds in order to get a consistent update on your OTV location.
+## Another paragraph <a name="paragraph2"></a>
+The second paragraph text
+ 
 
 
-#### Q. Why is my simulator code not working on my OTV?
 
-A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. YOu will have to make your own motor controller code for your OTV to work.
 
-#### Q. 
+
+
+
+
+
+
+
+
+
+
