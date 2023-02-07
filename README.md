@@ -39,14 +39,16 @@ Repeat the process on different power and ground wires until you locate the exac
 
 #### Q. Why isn't my WiFi module working?
 
-Use these pins for Arduino Megas
+Use these pins for __Arduino Megas__
 
 - 50
 - 51
 - 52
 - 53
 
-A. There could be many reasons why. First check to see if there is a red light on the wifi module. If there is, that means it is getting power (not necessarily the correct amount). If the red light is very dim, check to make sure that you’re giving the WiFi module 5V power (not 3.3V). If it’s still dim, your Arduino may be supplying too much current to other devices on your OTV so they should be powered from your battery instead.
+A. __Do not use pins 0 and 1 on your Arduino.__
+	  
+There could be many reasons why. First check to see if there is a red light on the wifi module. If there is, that means it is getting power (not necessarily the correct amount). If the red light is very dim, check to make sure that you’re giving the WiFi module 5V power (not 3.3V). If it’s still dim, your Arduino may be supplying too much current to other devices on your OTV so they should be powered from your battery instead.
 
 *If there isn’t a red light*, check your circuit to see if any wires are disconnected or placed incorrectly. If that is corrected and there is still no red light, then use a multimeter to check to see if the wifi module is actually receiving the correct voltage of 5V.
 
