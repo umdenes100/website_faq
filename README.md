@@ -21,7 +21,7 @@ A. Try to verify the arena coordinates your OTV is in and that you're asking it 
 
 #### Q. How do I get my servo motor to stop jittering?
 
-A. Try detaching the servo using the “.detach” method. You should only have the servo “attached” when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
+A. Try detaching the servo using the “servo.detach()” method. You should only have the servo “attached” (use servo.attach()) when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
 
 ```
 #include <Servo.h>  
@@ -134,12 +134,12 @@ Repeat the process on different power and ground wires until you locate the exac
   <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Solder_Tips.png" alt="Solder Tips + Order" width="450">
 	<p>
 	
-*Step 1:* Turn the soldering iron on to 600 and wait until you see that the small number (green arrow) matches the larger one (red arrow)
+*Step 1:* Turn the soldering iron on to 450 F and wait until you see that the small number (green arrow) matches the larger one (red arrow)
 
-<p align="center">
+<!--<p align="center">
   <img src="https://raw.githubusercontent.com/umdenes100/VisionSystemRemoteClient/master/img/Solder_Temp.png" alt="Temperature Adjustment" width="250">
 
-  <p>
+  <p> -->
 
 *Step 2*: Make sure that the sponge under the iron is wet and that the fan for your iron is on
 
