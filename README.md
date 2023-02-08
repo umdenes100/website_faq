@@ -54,7 +54,7 @@ void loop() {
 A. Check your code. If there is no apparent error, try adding an extra delay so that the system has enough time to fully process. For the location of the delay, view sample below:
 
 
-```
+```cpp
 #include <Enes100.h>
 
 //global
