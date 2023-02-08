@@ -1,16 +1,16 @@
 # ENES100 FAQ
 
 # Table of contents
-1. [Why is my simulator code not working on my OTV?](#introduction)
-2. [Electronics](#paragraph1)
+1. [Why is my simulator code not working on my OTV?](#q_sim)
+2. [Why are my pointers not working in the simulator?](#q_pointers)
 <!---  1. [Sub paragraph](#subparagraph1)
  3. [Another paragraph](#paragraph2) -->
 
-#### Q. Why is my simulator code not working on my OTV? <a name="introduction"></a>
+#### Q. Why is my simulator code not working on my OTV? <a name="q_sim"></a>
 
 A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. You will have to make your own motor controller code for your OTV to work.
 
-#### Q. Why are my pointers not working in the simulator?
+#### Q. Why are my pointers not working in the simulator? <a name="q_pointers"></a>
 
 A. The simulator does not support pointers.
 
@@ -112,7 +112,6 @@ Turn the multimeter to 20V (this is because the wifi module requires 5V and the 
 *If there isn’t a blue light*, that means that the WiFi module is not communicating with the vision system. First, do not use pins 0 or 1 (despite them being labeled TX and RX); on most microcontrollers, any digital pin except 0 and 1 should work. If you are using an Arduino Mega, check to see that TX is in 50, 51, 52, or 53. If TX is not in one of those, switch that and change the code accordingly. If all these conditions are met and the blue light is still not blinking, the problem is likely in your code. Is the program only running once in the setup() function? Make sure that there is something in the setup that is not in loop and that there is something in both. You could also try running just the example code from the ENES100 library (found on the website) to check and see if the wifi module is working.
 
 
-## Electronics <a name="paragraph1"></a>
 
 #### Q. How do I check for shorts in my circuit?
 
