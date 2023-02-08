@@ -206,7 +206,7 @@ If the cut stops partway through, check that the piece of acrylic or birch is no
 
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
 	  
-#### Q. When I try to use pinMode() on the Tx and Rx pins, why does the wifi module does not work? <a name ="q_wifi_pin"></a>
+#### <span style="color:red">Q. When I try to use pinMode() on the Tx and Rx pins, why does the wifi module does not work?</span> <a name ="q_wifi_pin"></a>
 
 A. pinMode() is already done within the ENES100 library. Doing pinMode() on the pins again can cause conflicts within the code.
 
