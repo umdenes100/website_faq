@@ -1,13 +1,12 @@
 # ENES100 FAQ
 
 # Table of contents
-1. [Programming](#introduction)
+1. [Why is my simulator code not working on my OTV?](#introduction)
 2. [Electronics](#paragraph1)
 <!---  1. [Sub paragraph](#subparagraph1)
  3. [Another paragraph](#paragraph2) -->
 
-## Programming <a name="introduction"></a>
-#### Q. Why is my simulator code not working on my OTV?
+#### Q. Why is my simulator code not working on my OTV? <a name="introduction"></a>
 
 A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. You will have to make your own motor controller code for your OTV to work.
 
