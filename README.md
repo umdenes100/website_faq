@@ -15,19 +15,19 @@
 <!---  1. [Sub paragraph](#subparagraph1)
  3. [Another paragraph](#paragraph2) -->
 
-#### Q. Why is my simulator code not working on my OTV? <a name="q_sim"></a>
+#### <span style="color:red">Q. Why is my simulator code not working on my OTV?</span> <a name="q_sim"></a>
 
 A. The simulator code uses the Tank.h library, which is designed to only run with the simulator. You will have to make your own motor controller code for your OTV to work.
 
-#### Q. Why are my pointers not working in the simulator? <a name="q_pointers"></a>
+#### <span style="color:red">Q. Why are my pointers not working in the simulator?</span> <a name="q_pointers"></a>
 
 A. The simulator does not support pointers.
 
-#### Q. Why is my OTV not turning to the direction I want it to? <a name="q_direction"></a>
+#### <span style="color:red">Q. Why is my OTV not turning to the direction I want it to?</span> <a name="q_direction"></a>
 
 A. Try to verify the arena coordinates your OTV is in and that you're asking it to turn to the correct angle. In addtion, add +- thresholds to target angle. For example, if you have a target angle of 90°, set a range between 85° and 95°. In addition, make sure that you are sampling the coordinates frequently enough. Try to sample the coordinates every 20 milliseconds in order to get a consistent update on your OTV location.
 
-#### Q. How do I get my servo motor to stop jittering? <a name="q_jitter"></a>
+#### <span style="color:red">Q. How do I get my servo motor to stop jittering?</span> <a name="q_jitter"></a>
 
 A. Try detaching the servo using the “servo.detach()” method. You should only have the servo “attached” (use servo.attach()) when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
 
@@ -49,7 +49,7 @@ void loop() {
 }
 
 ```
-#### Q. Why is my OTV just driving in a circle in the arena? <a name="q_circle"></a>
+#### <span style="color:red">Q. Why is my OTV just driving in a circle in the arena?</span> <a name="q_circle"></a>
 
 A. Check your code. If there is no apparent error, try adding an extra delay so that the system has enough time to fully process. For the location of the delay, view sample below:
 
@@ -91,16 +91,16 @@ else{
 }
 ```
 
-#### Q. Why is my sensor or motor not responding to my code? <a name="q_motor_response"></a>
+#### <span style="color:red">Q. Why is my sensor or motor not responding to my code?</span> <a name="q_motor_response"></a>
 
 A. Isolate the code that you intend to use for the motor/sensor and place it in a new sketch. This can verify that your commands work and are pointing to the correct pins. If it does not work, verify that you have the correct pins and that the amount of voltage you predict to flow to a specific point is correct (view multimeter FAQ if necessary). Modify code and wiring as needed. If that also doesn’t work, try to reintegrate earlier parts of the loop to see if your code is getting stuck somewhere else. Rinse and repeat.
 
 
-#### Q. Why is my sensor working but not being triggered by the expected action? <a name="q_sensor_action"></a>
+#### <span style="color:red">Q. Why is my sensor working but not being triggered by the expected action?</span> <a name="q_sensor_action"></a>
 
 A. Consider lowering the threshold (or distance) at which the sensor is activated. This increases the relative sensitivity of the sensor.
 
-#### Q. Why isn't my WiFi module working? <a name="q_esp"></a>
+#### <span style="color:red">Q. Why isn't my WiFi module working?</span> <a name="q_esp"></a>
 
 Use these pins for __Arduino Megas__
 
@@ -122,7 +122,7 @@ Turn the multimeter to 20V (this is because the wifi module requires 5V and the 
 
 
 
-#### Q. How do I check for shorts in my circuit? <a name="q_short"></a>
+#### <span style="color:red">Q. How do I check for shorts in my circuit?</span> <a name="q_short"></a>
 
 A. Grab a multimeter, from one of the cabinets in the lab, and turn the dial to “continuity”. The symbol for “continuity” is highlighted by the red arrow below.
 
@@ -133,7 +133,7 @@ A. Grab a multimeter, from one of the cabinets in the lab, and turn the dial to 
 
 Repeat the process on different power and ground wires until you locate the exact location of the short.
 
-#### Q. Why is my soldering iron not working/why can I not solder? <a name="q_solder"></a>
+#### <span style="color:red">Q. Why is my soldering iron not working/why can I not solder?</span> <a name="q_solder"></a>
 
 *Step 0:* Check the condition of the tip of the iron. If it is very black, replace the tip (an example of a bad tip is pictured below). This is done by unscrewing the black grip of the soldering iron and removing the tip. Select a new one and insert it back into the iron. Screw the grip back into place over it. Do NOT do this with the iron plugged in or if the iron is hot!
 
@@ -187,7 +187,7 @@ Alternatively, for larger connections, after melting some solder onto the iron t
 *Step 6*: To test to see if the soldering job was done correctly: pull the wires apart. If they separate, try again. You can also check for connectivity with the multimeter (view Q: How do I find shorts in my circuit).
 
 
-#### Q. Why is my laser cut not working/the wrong size? <a name="q_laser"></a>
+#### <span style="color:red">Q. Why is my laser cut not working/the wrong size?</span> <a name="q_laser"></a>
 
 A. For if it’s the wrong size, make sure the dimensions are 1:1 when exporting from Fusion360. You should also make sure that the style in Fusion360 is “line” (view screenshot)
 
@@ -202,7 +202,7 @@ Make sure to delete any text boxes and text before exporting as a pdf as well.
 If the cut stops partway through, check that the piece of acrylic or birch is not right up to the edges of the laser bed. If it is, move it away from the edges by about 2 inches and start over.
 
 
-#### Q. Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied? <a name="q_servo_voltage"></a>
+#### <span style="color:red">Q. Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied?</span> <a name="q_servo_voltage"></a>
 
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
 	  
