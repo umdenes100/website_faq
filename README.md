@@ -2,7 +2,7 @@
 1. [Why is my simulator code not working on my OTV?](#q_sim)
 2. [Why are my pointers not working in the simulator?](#q_pointers)
 3. [Why is my OTV not turning to the direction I want it to?](#q_direction)
-4. [ How do I get my servo motor to stop jittering?](#q_jitter)
+4. [How do I get my servo motor to stop jittering?](#q_jitter)
 5. [Why is my OTV just driving in a circle in the arena?](#q_circle)
 6. [Why is my sensor or motor not responding to my code?](#q_motor_response)
 7. [Why is my sensor working but not being triggered by the expected action?](#q_sensor_action)
@@ -11,6 +11,7 @@
 10. [Why is my soldering iron not working/why can I not solder?](#q_solder)
 11. [Why is my laser cut not working/the wrong size?](#q_laser)
 12. [Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied?](#q_servo_voltage)
+13. [When I try to use pinMode() on the Tx and Rx pins, why does the wifi module does not work?](#q_wifi_pin)
 <!---  1. [Sub paragraph](#subparagraph1)
  3. [Another paragraph](#paragraph2) -->
 
@@ -205,6 +206,9 @@ If the cut stops partway through, check that the piece of acrylic or birch is no
 
 A. Check for common ground! The H-Bridge and Arduino should be commonly grounded. If two components that have ground terminals aren't connected, they will be "communicating" at different voltage levels and will most likely not work.
 	  
+#### Q. When I try to use pinMode() on the Tx and Rx pins, why does the wifi module does not work? <a name ="q_wifi_pin"></a>
+
+A. pinMode() is already done within the ENES100 library. Doing pinMode() on the pins again can cause conflicts within the code.
 
 <!--### Sub paragraph <a name="subparagraph1"></a>
 <>This is a sub paragraph, formatted in heading 3 style
