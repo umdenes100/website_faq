@@ -1,6 +1,4 @@
-# ENES100 FAQ
-
-# Table of contents
+# ENES100 FAQ Table of Contents
 1. [Why is my simulator code not working on my OTV?](#q_sim)
 2. [Why are my pointers not working in the simulator?](#q_pointers)
 3. [Why is my OTV not turning to the direction I want it to?](#q_direction)
