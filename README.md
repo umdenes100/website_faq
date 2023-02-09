@@ -31,24 +31,25 @@ A. Try to verify the arena coordinates your OTV is in and that you're asking it 
 
 A. Try detaching the servo using the “servo.detach()” method. You should only have the servo “attached” (use servo.attach()) when the OTV is actually executing the mission. Before and after that, unless the servo is needed, it should be “detached”. View example below:
 
-```
-#include <Servo.h>  
-  
-Servo myservo;  
-  
-void setup()  
-{  
-  myservo.attach(9);  
-  // here 9 is the corresponding pin for the servo  
-}  
-  
-void loop() {  
-  myservo.detach  //detach it while navigation to mission site  
-  myservo.attach  //attach the servo when executing the mission or anything which requires the servo  
-  myservo.detach  //detach it when done  
-}
+<pre>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font> &nbsp;
+ &nbsp;
+<b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;
+ &nbsp;
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> &nbsp;
+<font color="#000000">{</font> &nbsp;
+ &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
+ &nbsp;<font color="#434f54">&#47;&#47; here 9 is the corresponding pin for the servo &nbsp;</font>
+<font color="#000000">}</font> &nbsp;
+ &nbsp;
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;
+ &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">detach</font> &nbsp;<font color="#434f54">&#47;&#47;detach it while navigation to mission site &nbsp;</font>
+ &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font> &nbsp;<font color="#434f54">&#47;&#47;attach the servo when executing the mission or anything which requires the servo &nbsp;</font>
+ &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">detach</font> &nbsp;<font color="#434f54">&#47;&#47;detach it when done &nbsp;</font>
+<font color="#000000">}</font>
 
-```
+</pre>
+
 #### <span style="color:red">Q. Why is my OTV just driving in a circle in the arena?</span> <a name="q_circle"></a>
 
 A. Check your code. If there is no apparent error, try adding an extra delay so that the system has enough time to fully process. For the location of the delay, view sample below:
