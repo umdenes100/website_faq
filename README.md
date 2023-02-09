@@ -54,42 +54,43 @@ void loop() {
 A. Check your code. If there is no apparent error, try adding an extra delay so that the system has enough time to fully process. For the location of the delay, view sample below:
 
 
-```cpp
-#include <Enes100.h>
+<pre>
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
 
-//global
-float x, y, theta = 0.0;
+<font color="#434f54">&#47;&#47;global</font>
+<font color="#00979c">float</font> <font color="#000000">x</font><font color="#434f54">,</font> <font color="#000000">y</font><font color="#434f54">,</font> <font color="#000000">theta</font> <font color="#434f54">=</font> <font color="#000000">0.0</font><font color="#000000">;</font>
 
-void setup() {
-   Enes100.begin ("It's lit", FIRE, 3, 8, 9);
-   // Valid mission names include: CRASH_SITE, DATA, MATERIAL, FIRE, and WATER
-   // These are case sensitive.
-   // The numbers are the pins used for RX, TX, and power.
-   Serial.begin(9600);
-}
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;&nbsp;<b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">begin</font> <font color="#000000">(</font><font color="#005c5f">&#34;It&#39;s lit&#34;</font><font color="#434f54">,</font> <font color="#000000">FIRE</font><font color="#434f54">,</font> <font color="#000000">3</font><font color="#434f54">,</font> <font color="#000000">8</font><font color="#434f54">,</font> <font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;<font color="#434f54">&#47;&#47; Valid mission names include: CRASH_SITE, DATA, MATERIAL, FIRE, and WATER</font>
+ &nbsp;&nbsp;<font color="#434f54">&#47;&#47; These are case sensitive.</font>
+ &nbsp;&nbsp;<font color="#434f54">&#47;&#47; The numbers are the pins used for RX, TX, and power.</font>
+ &nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
 
-void loop() {
-  if(!Enes100.updateLocation()){Enes100.printIn("Error");
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#434f54">!</font><b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">updateLocation</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">{</font><b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#000000">printIn</font><font color="#000000">(</font><font color="#005c5f">&#34;Error&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
 
-}
-else{
-  x = Enes100.location.x;
-  y = Enes100.location.y;
-  theta = Enes100.location.theta;
-  // This is where you might want to add a delay so that you can read what is printed and so the system has enough time to register the angle.
-  Enes100.print(x);// These print to the vision system
-  Enes100.print(",");
-  Enes100.print(y);
-  Enes100.print(",");
-  Enes100.println(theta);
-  Serial.print(x);// These print to the serial monitor from the Arduino program on your computer
-  Serial.print(",");
-  Serial.print(y);
-  Serial.print(",");
-  Serial.println(theta);
+<font color="#000000">}</font>
+<font color="#5e6d03">else</font><font color="#000000">{</font>
+ &nbsp;<font color="#000000">x</font> <font color="#434f54">=</font> <b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#000000">location</font><font color="#434f54">.</font><font color="#000000">x</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">y</font> <font color="#434f54">=</font> <b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#000000">location</font><font color="#434f54">.</font><font color="#000000">y</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">theta</font> <font color="#434f54">=</font> <b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#000000">location</font><font color="#434f54">.</font><font color="#000000">theta</font><font color="#000000">;</font>
+ &nbsp;<font color="#434f54">&#47;&#47; This is where you might want to add a delay so that you can read what is printed and so the system has enough time to register the angle.</font>
+ &nbsp;<b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">x</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47; These print to the vision system</font>
+ &nbsp;<b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;,&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">y</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;,&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Enes100</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">theta</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">x</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47; These print to the serial monitor from the Arduino program on your computer</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;,&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#000000">y</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;,&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">theta</font><font color="#000000">)</font><font color="#000000">;</font>
 
-}
-```
+<font color="#000000">}</font>
+
+</pre>
 
 #### <span style="color:red">Q. Why is my sensor or motor not responding to my code?</span> <a name="q_motor_response"></a>
 
