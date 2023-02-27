@@ -1,4 +1,4 @@
-# ENES100 FAQ Table of Contents
+<!-- # ENES100 FAQ Table of Contents
 1. [Why is my simulator code not working on my OTV?](#q_sim)
 2. [Why are my pointers not working in the simulator?](#q_pointers)
 3. [Why is my OTV not turning to the direction I want it to?](#q_direction)
@@ -11,7 +11,7 @@
 10. [Why is my soldering iron not working/why can I not solder?](#q_solder)
 11. [Why is my laser cut not working/the wrong size?](#q_laser)
 12. [Why are my servos, motors, and or other linear actions (components which run continuously) not working even though enough voltage is being applied?](#q_servo_voltage)
-13. [When I try to use pinMode() on the Tx and Rx pins, why does the wifi module does not work?](#q_wifi_pin)
+13. [When I try to use pinMode() on the Tx and Rx pins, why does the wifi module does not work?](#q_wifi_pin) -->
 <!---  1. [Sub paragraph](#subparagraph1)
  3. [Another paragraph](#paragraph2) -->
 
